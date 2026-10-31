@@ -1,0 +1,320 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     Raisin_Grains_Dataset
+Instances:    900
+Attributes:   8
+              Area
+              MajorAxisLength
+              MinorAxisLength
+              Eccentricity
+              ConvexArea
+              Extent
+              Perimeter
+              Class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 1006.375: Kecimen (287.0/24.0)
+|   Perimeter > 1006.375
+|   |   Extent <= 0.7476
+|   |   |   Perimeter <= 1122.831
+|   |   |   |   Area <= 62835
+|   |   |   |   |   Extent <= 0.701678
+|   |   |   |   |   |   Extent <= 0.666255: Besni (4.0)
+|   |   |   |   |   |   Extent > 0.666255: Kecimen (4.0)
+|   |   |   |   |   Extent > 0.701678: Besni (6.0)
+|   |   |   |   Area > 62835: Kecimen (124.0/24.0)
+|   |   |   Perimeter > 1122.831
+|   |   |   |   Extent <= 0.671309: Besni (7.0)
+|   |   |   |   Extent > 0.671309
+|   |   |   |   |   Eccentricity <= 0.75951: Besni (22.0/7.0)
+|   |   |   |   |   Eccentricity > 0.75951: Kecimen (9.0/1.0)
+|   |   Extent > 0.7476: Kecimen (27.0)
+MajorAxisLength > 422.279133: Besni (410.0/41.0)
+
+Number of Leaves  : 	10
+
+Size of the tree : 	19
+
+
+Time taken to build model: 0.01 seconds
+
+
+=== Classifier model for fold 1 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 424.278315
+|   Perimeter <= 1122.16: Kecimen (403.0/54.0)
+|   Perimeter > 1122.16
+|   |   Extent <= 0.748193: Besni (41.0/16.0)
+|   |   Extent > 0.748193: Kecimen (6.0)
+MajorAxisLength > 424.278315: Besni (360.0/34.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+=== Classifier model for fold 2 ===
+
+J48 unpruned tree
+------------------
+
+Perimeter <= 1122.16
+|   Eccentricity <= 0.853543: Kecimen (388.0/44.0)
+|   Eccentricity > 0.853543
+|   |   Eccentricity <= 0.868895
+|   |   |   Eccentricity <= 0.856495: Besni (3.0/1.0)
+|   |   |   Eccentricity > 0.856495: Kecimen (8.0)
+|   |   Eccentricity > 0.868895
+|   |   |   Eccentricity <= 0.888878: Besni (8.0)
+|   |   |   Eccentricity > 0.888878: Kecimen (3.0/1.0)
+Perimeter > 1122.16: Besni (400.0/50.0)
+
+Number of Leaves  : 	6
+
+Size of the tree : 	11
+
+
+=== Classifier model for fold 3 ===
+
+J48 unpruned tree
+------------------
+
+Perimeter <= 1202.369
+|   MajorAxisLength <= 394.3975: Kecimen (365.0/46.0)
+|   MajorAxisLength > 394.3975
+|   |   Eccentricity <= 0.870957
+|   |   |   Perimeter <= 1122.16
+|   |   |   |   MinorAxisLength <= 231.661019
+|   |   |   |   |   Eccentricity <= 0.85704
+|   |   |   |   |   |   Perimeter <= 1097.299
+|   |   |   |   |   |   |   Perimeter <= 1087.108
+|   |   |   |   |   |   |   |   Perimeter <= 1065.68: Kecimen (4.0/1.0)
+|   |   |   |   |   |   |   |   Perimeter > 1065.68: Besni (4.0)
+|   |   |   |   |   |   |   Perimeter > 1087.108: Kecimen (3.0)
+|   |   |   |   |   |   Perimeter > 1097.299: Besni (5.0)
+|   |   |   |   |   Eccentricity > 0.85704: Kecimen (5.0)
+|   |   |   |   MinorAxisLength > 231.661019: Kecimen (27.0/2.0)
+|   |   |   Perimeter > 1122.16
+|   |   |   |   Perimeter <= 1130.427: Besni (7.0)
+|   |   |   |   Perimeter > 1130.427: Kecimen (71.0/35.0)
+|   |   Eccentricity > 0.870957: Besni (15.0/1.0)
+Perimeter > 1202.369: Besni (304.0/13.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+=== Classifier model for fold 4 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 912.259: Kecimen (135.0/5.0)
+|   Perimeter > 912.259
+|   |   Extent <= 0.7476
+|   |   |   ConvexArea <= 89581
+|   |   |   |   Eccentricity <= 0.815663: Kecimen (195.0/34.0)
+|   |   |   |   Eccentricity > 0.815663
+|   |   |   |   |   Eccentricity <= 0.870957
+|   |   |   |   |   |   MinorAxisLength <= 216.894: Kecimen (34.0/6.0)
+|   |   |   |   |   |   MinorAxisLength > 216.894: Besni (18.0/7.0)
+|   |   |   |   |   Eccentricity > 0.870957: Besni (6.0)
+|   |   |   ConvexArea > 89581
+|   |   |   |   Extent <= 0.715907: Besni (7.0)
+|   |   |   |   Extent > 0.715907
+|   |   |   |   |   Area <= 94282
+|   |   |   |   |   |   MajorAxisLength <= 408.940773: Besni (5.0)
+|   |   |   |   |   |   MajorAxisLength > 408.940773: Kecimen (2.0)
+|   |   |   |   |   Area > 94282: Kecimen (3.0)
+|   |   Extent > 0.7476: Kecimen (40.0/1.0)
+MajorAxisLength > 422.279133: Besni (365.0/35.0)
+
+Number of Leaves  : 	11
+
+Size of the tree : 	21
+
+
+=== Classifier model for fold 5 ===
+
+J48 unpruned tree
+------------------
+
+Perimeter <= 1127.409
+|   MajorAxisLength <= 398.326553: Kecimen (362.0/38.0)
+|   MajorAxisLength > 398.326553
+|   |   MinorAxisLength <= 231.142084: Besni (24.0/8.0)
+|   |   MinorAxisLength > 231.142084
+|   |   |   Extent <= 0.651213: Besni (2.0)
+|   |   |   Extent > 0.651213: Kecimen (22.0/1.0)
+Perimeter > 1127.409: Besni (400.0/52.0)
+
+Number of Leaves  : 	5
+
+Size of the tree : 	9
+
+
+=== Classifier model for fold 6 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   MajorAxisLength <= 354.963667: Kecimen (241.0/20.0)
+|   MajorAxisLength > 354.963667
+|   |   Extent <= 0.728999
+|   |   |   ConvexArea <= 88336
+|   |   |   |   Eccentricity <= 0.870957: Kecimen (120.0/29.0)
+|   |   |   |   Eccentricity > 0.870957: Besni (7.0/1.0)
+|   |   |   ConvexArea > 88336
+|   |   |   |   Perimeter <= 1142.632: Kecimen (3.0/1.0)
+|   |   |   |   Perimeter > 1142.632: Besni (10.0)
+|   |   Extent > 0.728999: Kecimen (63.0/7.0)
+MajorAxisLength > 422.279133: Besni (366.0/34.0)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	13
+
+
+=== Classifier model for fold 7 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 1006.375: Kecimen (257.0/20.0)
+|   Perimeter > 1006.375
+|   |   Extent <= 0.7476
+|   |   |   Extent <= 0.651213: Besni (9.0/1.0)
+|   |   |   Extent > 0.651213
+|   |   |   |   ConvexArea <= 89605: Kecimen (138.0/37.0)
+|   |   |   |   ConvexArea > 89605
+|   |   |   |   |   Extent <= 0.728999: Besni (8.0)
+|   |   |   |   |   Extent > 0.728999
+|   |   |   |   |   |   Extent <= 0.741659: Kecimen (4.0)
+|   |   |   |   |   |   Extent > 0.741659: Besni (3.0)
+|   |   Extent > 0.7476: Kecimen (25.0)
+MajorAxisLength > 422.279133: Besni (366.0/37.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+
+=== Classifier model for fold 8 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 1122.831
+|   |   Perimeter <= 912.259: Kecimen (126.0/5.0)
+|   |   Perimeter > 912.259
+|   |   |   Area <= 76364
+|   |   |   |   Perimeter <= 1075.307: Kecimen (208.0/32.0)
+|   |   |   |   Perimeter > 1075.307
+|   |   |   |   |   Perimeter <= 1079.578: Besni (4.0)
+|   |   |   |   |   Perimeter > 1079.578: Kecimen (19.0/7.0)
+|   |   |   Area > 76364: Kecimen (36.0)
+|   Perimeter > 1122.831
+|   |   Extent <= 0.748193
+|   |   |   Extent <= 0.671309: Besni (7.0)
+|   |   |   Extent > 0.671309
+|   |   |   |   Eccentricity <= 0.75951: Besni (22.0/7.0)
+|   |   |   |   Eccentricity > 0.75951: Kecimen (9.0/1.0)
+|   |   Extent > 0.748193: Kecimen (7.0)
+MajorAxisLength > 422.279133: Besni (372.0/38.0)
+
+Number of Leaves  : 	10
+
+Size of the tree : 	19
+
+
+=== Classifier model for fold 9 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 912.259: Kecimen (134.0/4.0)
+|   Perimeter > 912.259
+|   |   Perimeter <= 1122.831: Kecimen (267.0/44.0)
+|   |   Perimeter > 1122.831
+|   |   |   Extent <= 0.746163
+|   |   |   |   Eccentricity <= 0.763268
+|   |   |   |   |   Perimeter <= 1174.203: Besni (13.0/1.0)
+|   |   |   |   |   Perimeter > 1174.203
+|   |   |   |   |   |   Extent <= 0.726968: Besni (5.0/1.0)
+|   |   |   |   |   |   Extent > 0.726968: Kecimen (4.0)
+|   |   |   |   Eccentricity > 0.763268: Kecimen (7.0/1.0)
+|   |   |   Extent > 0.746163: Kecimen (5.0)
+MajorAxisLength > 422.279133: Besni (375.0/35.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+
+=== Classifier model for fold 10 ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.09849
+|   Perimeter <= 1006.375: Kecimen (259.0/21.0)
+|   Perimeter > 1006.375
+|   |   Area <= 62562
+|   |   |   Extent <= 0.701678
+|   |   |   |   Extent <= 0.666255: Besni (4.0)
+|   |   |   |   Extent > 0.666255: Kecimen (3.0)
+|   |   |   Extent > 0.701678: Besni (7.0)
+|   |   Area > 62562
+|   |   |   Extent <= 0.703288
+|   |   |   |   Area <= 84295
+|   |   |   |   |   MajorAxisLength <= 418.408134: Kecimen (47.0/13.0)
+|   |   |   |   |   MajorAxisLength > 418.408134: Besni (4.0)
+|   |   |   |   Area > 84295: Besni (7.0)
+|   |   |   Extent > 0.703288: Kecimen (106.0/15.0)
+MajorAxisLength > 422.09849: Besni (373.0/39.0)
+
+Number of Leaves  : 	9
+
+Size of the tree : 	17
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         758               84.2222 %
+Incorrectly Classified Instances       142               15.7778 %
+Kappa statistic                          0.6844
+Mean absolute error                      0.2247
+Root mean squared error                  0.3602
+Relative absolute error                 44.9498 %
+Root relative squared error             72.0409 %
+Total Number of Instances              900     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.867    0.182    0.826      0.867    0.846      0.685    0.865     0.838     Kecimen
+                 0.818    0.133    0.860      0.818    0.838      0.685    0.865     0.820     Besni
+Weighted Avg.    0.842    0.158    0.843      0.842    0.842      0.685    0.865     0.829     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 390  60 |   a = Kecimen
+  82 368 |   b = Besni
+

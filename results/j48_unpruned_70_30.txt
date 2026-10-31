@@ -1,0 +1,100 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -U -M 2
+Relation:     Raisin_Grains_Dataset
+Instances:    900
+Attributes:   8
+              Area
+              MajorAxisLength
+              MinorAxisLength
+              Eccentricity
+              ConvexArea
+              Extent
+              Perimeter
+              Class
+Test mode:    split 70.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 422.279133
+|   Perimeter <= 1006.375: Kecimen (287.0/24.0)
+|   Perimeter > 1006.375
+|   |   Extent <= 0.7476
+|   |   |   Perimeter <= 1122.831
+|   |   |   |   Area <= 62835
+|   |   |   |   |   Extent <= 0.701678
+|   |   |   |   |   |   Extent <= 0.666255: Besni (4.0)
+|   |   |   |   |   |   Extent > 0.666255: Kecimen (4.0)
+|   |   |   |   |   Extent > 0.701678: Besni (6.0)
+|   |   |   |   Area > 62835: Kecimen (124.0/24.0)
+|   |   |   Perimeter > 1122.831
+|   |   |   |   Extent <= 0.671309: Besni (7.0)
+|   |   |   |   Extent > 0.671309
+|   |   |   |   |   Eccentricity <= 0.75951: Besni (22.0/7.0)
+|   |   |   |   |   Eccentricity > 0.75951: Kecimen (9.0/1.0)
+|   |   Extent > 0.7476: Kecimen (27.0)
+MajorAxisLength > 422.279133: Besni (410.0/41.0)
+
+Number of Leaves  : 	10
+
+Size of the tree : 	19
+
+
+Time taken to build model: 0.01 seconds
+
+
+=== Classifier model for training split (630 instances) ===
+
+J48 unpruned tree
+------------------
+
+MajorAxisLength <= 416.712717
+|   Area <= 44460: Kecimen (47.0)
+|   Area > 44460
+|   |   Perimeter <= 1122.831
+|   |   |   Eccentricity <= 0.802035: Kecimen (211.0/22.0)
+|   |   |   Eccentricity > 0.802035
+|   |   |   |   Eccentricity <= 0.872004: Kecimen (53.0/15.0)
+|   |   |   |   Eccentricity > 0.872004: Besni (5.0)
+|   |   Perimeter > 1122.831
+|   |   |   Area <= 92188
+|   |   |   |   MajorAxisLength <= 406.690687: Besni (12.0/2.0)
+|   |   |   |   MajorAxisLength > 406.690687: Kecimen (6.0/1.0)
+|   |   |   Area > 92188: Kecimen (5.0)
+MajorAxisLength > 416.712717: Besni (291.0/32.0)
+
+Number of Leaves  : 	8
+
+Size of the tree : 	15
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         231               85.5556 %
+Incorrectly Classified Instances        39               14.4444 %
+Kappa statistic                          0.7107
+Mean absolute error                      0.2287
+Root mean squared error                  0.355 
+Relative absolute error                 45.7372 %
+Root relative squared error             70.9877 %
+Total Number of Instances              270     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.833    0.123    0.866      0.833    0.849      0.711    0.869     0.823     Kecimen
+                 0.877    0.167    0.846      0.877    0.861      0.711    0.869     0.831     Besni
+Weighted Avg.    0.856    0.145    0.856      0.856    0.855      0.711    0.869     0.827     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 110  22 |   a = Kecimen
+  17 121 |   b = Besni
+
