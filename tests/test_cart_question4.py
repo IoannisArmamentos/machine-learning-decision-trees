@@ -53,8 +53,8 @@ def output_dir(tmp_path_factory):
 
 @pytest.fixture
 def recorded_calls(monkeypatch):
-    """Record the row labels of the data passed to every tree fit and predict."""
-    calls = {"fit": [], "predict": []}
+    """Record the data rows of every tree fit and predict, and each fit's criterion."""
+    calls = {"fit": [], "predict": [], "fit_criterion": []}
 
     def spy_on(method_name):
         original = getattr(DecisionTreeClassifier, method_name)
@@ -62,6 +62,8 @@ def recorded_calls(monkeypatch):
         @functools.wraps(original)
         def wrapper(self, X, *args, **kwargs):
             calls[method_name].append(set(X.index))
+            if method_name == "fit":
+                calls["fit_criterion"].append(self.criterion)
             return original(self, X, *args, **kwargs)
 
         monkeypatch.setattr(DecisionTreeClassifier, method_name, wrapper)
@@ -126,7 +128,15 @@ def test_inner_split_is_reproducible(outer_split, inner_split):
 # --- Gini and the final models -------------------------------------------------
 
 
-def test_every_candidate_tree_uses_gini():
+@pytest.mark.parametrize("part", ["A", "B"])
+def test_every_tree_fitted_during_a_part_uses_gini(outer_split, recorded_calls, part):
+    # Covers the pruning path, every candidate (and CV fold) and the final refit.
+    result = run_part(part, outer_split)
+    assert len(recorded_calls["fit_criterion"]) > result["row"]["n_candidates"]
+    assert set(recorded_calls["fit_criterion"]) == {"gini"}
+
+
+def test_build_gini_tree_settings():
     params = q4.build_gini_tree(0.01).get_params()
     assert params["criterion"] == "gini"
     assert params["ccp_alpha"] == 0.01
