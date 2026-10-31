@@ -238,20 +238,20 @@ def run_part_a(
         X_outer_train, y_outer_train
     )
     result = evaluate_approach(
-        "A_validation_set",
-        lambda: search_with_validation_set(
+        approach="A_validation_set",
+        search=lambda: search_with_validation_set(
             X_train, y_train, X_validation, y_validation
         ),
-        "validation_accuracy",
-        len(X_train),
-        len(X_validation),
+        score_column="validation_accuracy",
+        n_search_train=len(X_train),
+        n_validation=len(X_validation),
         # The final tree learns from the union of train and validation, as the
         # assignment asks; alpha stays the value chosen on the 540-example tree.
-        pd.concat([X_train, X_validation]),
-        pd.concat([y_train, y_validation]),
-        X_test,
-        y_test,
-        timing_repeats,
+        X_final_train=pd.concat([X_train, X_validation]),
+        y_final_train=pd.concat([y_train, y_validation]),
+        X_test=X_test,
+        y_test=y_test,
+        timing_repeats=timing_repeats,
     )
     add_tree_sizes(result["candidates"], X_train, y_train)
     return result
@@ -266,16 +266,16 @@ def run_part_b(
 ) -> dict:
     """Part B: select by CV on the training set, then refit on all of it."""
     result = evaluate_approach(
-        "B_cross_validation",
-        lambda: search_with_cross_validation(X_train, y_train),
-        "cv_mean_accuracy",
-        len(X_train),
-        0,
-        X_train,
-        y_train,
-        X_test,
-        y_test,
-        timing_repeats,
+        approach="B_cross_validation",
+        search=lambda: search_with_cross_validation(X_train, y_train),
+        score_column="cv_mean_accuracy",
+        n_search_train=len(X_train),
+        n_validation=0,
+        X_final_train=X_train,
+        y_final_train=y_train,
+        X_test=X_test,
+        y_test=y_test,
+        timing_repeats=timing_repeats,
     )
     add_tree_sizes(result["candidates"], X_train, y_train)
     return result
