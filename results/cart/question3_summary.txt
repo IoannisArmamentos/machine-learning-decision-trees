@@ -1,0 +1,27 @@
+Assignment 1 - Question 3: CART (scikit-learn DecisionTreeClassifier)
+=====================================================================
+
+Dataset: Raisin_Dataset.xlsx, 900 examples, 7 numeric features, classes: Besni=450, Kecimen=450
+
+Hold-out evaluation (test accuracy, leaves, depth):
+  Stratified split, random_state=1, 630 training / 270 test examples.
+  The same split is used for all four configurations; each tree is
+  trained on the training set only.
+
+Cross-validation (CV mean, CV std):
+  StratifiedKFold(n_splits=10, shuffle=True, random_state=1) on the complete dataset.
+  CV std is the population standard deviation (ddof=0) over the folds.
+
+Classifier settings:
+  random_state=1; all growth limits at their defaults (max_depth=None, etc.).
+
+Configuration     Criterion  ccp_alpha  Test acc  Leaves  Depth   CV mean   CV std
+----------------------------------------------------------------------------------
+gini_unpruned     gini             0.0    0.8444      76     16    0.8089   0.0325
+entropy_unpruned  entropy          0.0    0.8370      71     19    0.8133   0.0406
+gini_pruned       gini             0.1    0.8444       2      1    0.8544   0.0328
+entropy_pruned    entropy          0.1    0.8444       2      1    0.8567   0.0312
+
+Leaf count and depth describe the tree trained on the 70% training set.
+
+Software: Python 3.14.4, scikit-learn 1.9.1, pandas 3.0.6, NumPy 2.5.4

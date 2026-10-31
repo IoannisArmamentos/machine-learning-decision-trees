@@ -1,0 +1,78 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -R -N 3 -Q 1 -M 2
+Relation:     Raisin_Grains_Dataset
+Instances:    900
+Attributes:   8
+              Area
+              MajorAxisLength
+              MinorAxisLength
+              Eccentricity
+              ConvexArea
+              Extent
+              Perimeter
+              Class
+Test mode:    split 70.0% train, remainder test
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Perimeter <= 1122.16
+|   Eccentricity <= 0.825087: Kecimen (246.0/22.0)
+|   Eccentricity > 0.825087
+|   |   Eccentricity <= 0.872416: Kecimen (45.0/10.0)
+|   |   Eccentricity > 0.872416: Besni (6.0/1.0)
+Perimeter > 1122.16: Besni (303.0/40.0)
+
+Number of Leaves  : 	4
+
+Size of the tree : 	7
+
+
+Time taken to build model: 0 seconds
+
+
+=== Classifier model for training split (630 instances) ===
+
+J48 pruned tree
+------------------
+
+Perimeter <= 1198.259
+|   MajorAxisLength <= 416.898937: Kecimen (230.0/36.0)
+|   MajorAxisLength > 416.898937: Besni (35.0/12.0)
+Perimeter > 1198.259: Besni (155.0/6.0)
+
+Number of Leaves  : 	3
+
+Size of the tree : 	5
+
+=== Evaluation on test split ===
+
+Time taken to test model on test split: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         231               85.5556 %
+Incorrectly Classified Instances        39               14.4444 %
+Kappa statistic                          0.7109
+Mean absolute error                      0.2148
+Root mean squared error                  0.3306
+Relative absolute error                 42.9517 %
+Root relative squared error             66.1038 %
+Total Number of Instances              270     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.848    0.138    0.855      0.848    0.852      0.711    0.895     0.832     Kecimen
+                 0.862    0.152    0.856      0.862    0.859      0.711    0.895     0.880     Besni
+Weighted Avg.    0.856    0.145    0.856      0.856    0.856      0.711    0.895     0.857     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 112  20 |   a = Kecimen
+  19 119 |   b = Besni
+
