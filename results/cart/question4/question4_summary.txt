@@ -1,0 +1,51 @@
+Assignment 1 - Question 4: selecting ccp_alpha for CART (Gini)
+==============================================================
+
+Method:
+  Outer split: Question 3's stratified 70/30 split (random_state=1).
+  Candidates: distinct alphas of cost_complexity_pruning_path on the
+  applicable training set only.
+  Tie rule: the largest alpha among candidates with the best score
+  (scores within 1e-12 count as tied).
+  The test set is scored once per part, after alpha and the tree are fixed.
+
+Part A: validation set (540 train / 90 validation / 270 test)
+  Candidate alphas:     28
+  Best validation acc:  0.8667
+  Candidates tied:      4 (alpha 0.004358 to 0.005490)
+  Selected alpha:       0.005490
+  Final tree:           5 leaves, depth 3, trained on 630 examples
+  Test accuracy:        0.8481 (229/270)
+
+Part B: 10-fold CV on the training set (630 train / 270 test)
+  Candidate alphas:     38
+  Best mean CV acc:     0.8619
+  Candidates tied:      1 (alpha 0.012438 to 0.012438)
+  Selected alpha:       0.012438
+  Final tree:           2 leaves, depth 1, trained on 630 examples
+  Test accuracy:        0.8444 (228/270)
+
+Comparison on the same test set (including Question 3's Gini trees):
+Method                     ccp_alpha  Test acc  Correct  Leaves  Depth
+----------------------------------------------------------------------
+Q3_gini_unpruned            0.000000    0.8444  228/270      76     16
+Q3_gini_pruned              0.100000    0.8444  228/270       2      1
+Q4_A_validation_set         0.005490    0.8481  229/270       5      3
+Q4_B_cross_validation       0.012438    0.8444  228/270       2      1
+
+Part A classifies 1 more of the 270 test examples correctly.
+This compares one split and one test set, so it reports an outcome rather
+than a general ranking of the methods.
+
+Execution time (median of 5 runs; machine-dependent):
+                            Search     Refit       Sum
+  Part A                    0.086s   0.0028s    0.089s
+  Part B                    1.449s   0.0024s    1.451s
+  Part B / Part A sum: 16.3 times
+  Search: pruning path, fitting and scoring every candidate (one fit each in
+  Part A, ten in Part B, whose path also has more candidates), and selection.
+  Refit: fitting the final tree on the 630 examples.
+  Sum: median search time + median refit time, not the median of a directly
+  measured end-to-end duration (search and refit are timed separately).
+  Excluded: data loading, splitting, test scoring, tree-size reporting,
+  figures and file writing. Runs use one process.
