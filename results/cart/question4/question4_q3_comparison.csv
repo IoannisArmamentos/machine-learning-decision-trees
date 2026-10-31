@@ -1,0 +1,5 @@
+method,ccp_alpha,n_final_train,n_test,test_accuracy,test_correct,n_leaves,tree_depth
+Q3_gini_unpruned,0.0,630,270,0.8444444444444444,228,76,16
+Q3_gini_pruned,0.1,630,270,0.8444444444444444,228,2,1
+Q4_A_validation_set,0.005490196078431372,630,270,0.8481481481481481,229,5,3
+Q4_B_cross_validation,0.012437624629466848,630,270,0.8444444444444444,228,2,1

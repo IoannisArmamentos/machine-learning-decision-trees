@@ -1,0 +1,3 @@
+approach,criterion,selected_ccp_alpha,n_candidates,selection_metric,selection_score,n_tied_candidates,tied_alpha_min,tied_alpha_max,n_search_train,n_validation,n_final_train,n_test,test_accuracy,test_correct,n_leaves,tree_depth,n_nodes
+A_validation_set,gini,0.005490196078431372,28,validation_accuracy,0.8666666666666667,4,0.004358232826141728,0.005490196078431372,540,90,630,270,0.8481481481481481,229,5,3,9
+B_cross_validation,gini,0.012437624629466848,38,cv_mean_accuracy,0.8619047619047618,1,0.012437624629466848,0.012437624629466848,630,0,630,270,0.8444444444444444,228,2,1,3
